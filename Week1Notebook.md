@@ -16,6 +16,6 @@ then processed using DNAzol and a 96 well plate Qiagen extraction kit.
 
 Next the samples were restriction enzyme digested using **Sbfl-HF** restriction enzyme then the samples were ligated and sonicated to produce functionally approprate bands between 200-600bp for sequencing. 
 
-Finally the samples were prepped as libraries using the Kappa LTP Kit. Once these libraries have been created the samples have been barcoded and are ready for sequencing. 
+Finally the samples were prepped as libraries using the Kappa LTP Kit. Once these libraries have been created the samples have been barcoded and are ready for RAD sequencing. 
 
 You can find the full protocol for sample processing and prep [here](https://github.com/sr320/LabDocs/blob/master/protocols/RADseq.md). 
