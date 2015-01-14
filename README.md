@@ -13,5 +13,4 @@ Notebooks for each week/project:
 [Week 1](https://github.com/jheare/Fish546-Jake/blob/master/nb/Week1Notebook.md)
 
 [Week 2](http://nbviewer.ipython.org/github/jheare/Fish546-Jake/blob/master/nb/RAD-Seq%20Process.ipynb)
-
-
+Log files for process Theradtags: [log 1](https://github.com/jheare/Fish546-Jake/blob/master/samples/process_radtags.log)
