@@ -1,0 +1,4 @@
+CGATA     fox2-01
+CGGCG     fox2-02
+CGATA     rabbit34-01
+CGGCG     rabbit34-02
