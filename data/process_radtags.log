@@ -1,5 +1,5 @@
-process_radtags -p ../lane1rad -o ./samples/ -b ./data/decradbarcodes1.csv -e sbfI -r -c -q -i fastq
-process_radtags executed 2015-01-14 18:08:23
+process_radtags -p ../lane1rad -o ../samples/ -b ./data/decradbarcodes1.csv -e sbfI -r -c -q -i fastq
+process_radtags executed 2015-02-04 15:50:53
 
 File	Retained Reads	Low Quality	Ambiguous Barcodes	Ambiguous RAD-Tag	Total
 lane1_NoIndex_L001_R1_001.fastq	1058753	293307	7909635	6738305	16000000
