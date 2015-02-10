@@ -1,0 +1,14 @@
+# Background on Oly RAD-Seq #
+
+The *Ostrea lurida* population structure and local adaptation project has been ongoing for two years now. This project is looking at three geographically separated populations in Puget Sound Washington using a reciprocal transplant experiment to monitor differences in phenotypes between each population. The first year of the phenotype project has been completed, so no we are moving on to the second half of the project. Evaluating the genetic differences between the populations to determine underlying genotype differences. We are using restriction enzyme-digested DNA sequencing to produce genomic information for every sampled individual from the sampled populations. By comparing this information using the program STACKS and STRUCTURE or GenePop we will able to create a catalog of single nucleotide polymorphisms for each individual and compare them to a population average catalog to identify unique properties of each population in each environment. To do this second part we selected samples from the original outplant populations for RAD-Sequencing. 
+
+## Sample Sequencing ##
+32 individuals from each population (n=96) were selected for DNA isolation, RAD processing, and library creation in October 2014. From there the samples were sent to University of Oregon's Core Facility for sequencing. The data was sent back from sequencing in December 2014. The main objective of this project is to learn the workflow of STACKS to take the raw sequencing information produce meaningful data about SNPs and some population genetic statistics. 
+
+## Demultiplexing Data ##
+First we have to demultiplex the samples, as all the samples were pooled to run on a single lane. Each sample has had a unique barcode attached to it prior to pooling which is included on a [barcode file](https://github.com/jheare/Fish546-Jake/blob/master/data/barcodesnew.txt) along with a sample name. The raw sequence data is run through STACKS program *process_radtags* with the barcode file. This program quality filters sequence information removing reads with ambiguous barcodes and radtags while producing fastq files associated with each unique sample.
+
+## Denovo Analysis ##
+Next these fastq files and a population map (tab delimited file with sample name and population designation) are processed with *denovo_map.pl* which is a pipeline function of STACKS that runs samples through sub programs *ustacks*, *cstacks*, & *sstacks* which calls for loci, alleles, and SNPs for each sample, creates catalogs based on a population map provided, and then finds matches between samples and each catalog. After running through each of these programs, *denovo_map.pl* then runs the sub program *populations* to produce population genetics statistics. It can also produce output files for use with STRUCTURE or GenePop.   
+
+ 
