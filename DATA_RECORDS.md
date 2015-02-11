@@ -123,3 +123,93 @@ sample_ CCCGGT.fq     sample_ GGTACA.fq
 **process radtags log file**
 process_ radtags.log
 
+*10 Samples used for *ustacks* selected via highest number of retained reads.* 
+
+**samples used**
+
+sample_ CACCTC
+
+sample_ CCCTAA
+
+sample_ GCTCAA
+
+sample_ GTGTAA
+
+sample_ ACATAC
+
+sample_ ACCATG
+
+sample_ ACCCCC
+
+sample_ CAAAAA
+
+sample_ TACACA
+
+sample_ CAGGCA
+
+*in all subsequent references to these samples, they be referred to as ID instead of mentioning every individual file*
+##
+### ustacks output ###
+*all files produces are in the standard tab delimited format .tsv, substitute ID for appropriate sample name*
+
+**directory** Hummingbird ./srlab/ustacks
+
+**Assembled Loci file**
+ID.tags.tsv (10 files)
+
+**SNP calls file**
+ID.snps.tsv (10 files)
+
+**Haplotypes/Alleles file**
+ID.alleles.tsv (10 files)
+##
+### cstacks output ###
+**directory** Hummingbird ./srlab/ustacks
+
+**Loci catalog file**
+batch_ 1.catalog.tags.tsv
+
+**SNP catalog file**
+batch_ 1.catalog.snps.tsv
+
+**Allele catalog file**
+batch_ 1.catalog.alleles.tsv
+
+##
+### sstacks output ###
+**directory** Hummingbird ./srlab/ustacks
+
+**Matches file**
+ID.matches.tsv (10 files)
+
+##
+### populations output ###
+*Each sample file in ustacks was designated with a different SQL batch number (1-10), substitute these numbers for the appropriate file*
+**directory** Hummingbir ./srlab/ustacks
+
+**Summary Population Statistics**
+batch_ X.sumstats.tsv (10 files)
+
+**Summary of Summary Statistics**
+batch_ X.sumstats_ summary.tsv (10 files)
+
+**FST Calculations**
+batch_ X.fst_ Y-Z.tsv (10 files)
+
+**Haplotype statistics**
+batch_ X.hapstats.tsv (10 files)
+
+**Haplotype FST calculations**
+batch_ X.phistats.tsv (10 files)
+
+**Haplotype FST calculations for pairwise comparisons**
+batch_ X.phistats_ Y-Z.tsv (10 files)
+
+**Full sequence haplotypes for population members**
+batch_ X.fa (10 files)
+
+**Raw genotypes foe each nucleotide**
+batch_ X.genomics.tsv (10 files)
+
+**Variant Call Format file**
+ID.VCF (10 files)
