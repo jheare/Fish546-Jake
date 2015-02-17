@@ -1,4 +1,5 @@
 # Data Record #
+##Change to narrative. Describe columns in TSV files as they pertain to the data.##
 ----
 ### Raw Sequence Data ###
 **directory** OWL
