@@ -8,6 +8,7 @@ All analysis performed using:
 - IPython version 2.1.0
 - Stacks 1.24
 
+You can download Stacks [here.](http://creskolab.uoregon.edu/stacks/)
 
 ### Workflow Notebooks ###
 
