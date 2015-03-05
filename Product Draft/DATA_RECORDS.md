@@ -125,7 +125,7 @@ sample_ CAGGCA
 ### ustacks ###
 First the samples were run through the *ustacks* function which assembled the loci for each sample producing a sample.tags.tsv file, then called for SNPs producing a sample.snps.tsv file, and finally determined haplotypes and alleles creating a sample.alleles.tsv. No errors were produced for *ustacks* as it needs no input file to discern populations. Files were placed into the directory **Hummingbird/Users/srlab/ustacks**. This creates 30 files. 
 
-| Sample 	|  Reads 	| Mean Coverage 	|  St Dev 	|
+| **Sample** 	|  **Reads** 	| **Mean Coverage** 	|  **St Dev** 	|
 |:------:	|:------:	|:-------------:	|:-------:	|
 | CACCTC 	|  79749 	|    9.77419    	|  21.343 	|
 | CCCTAA 	| 162821 	|    15.5762    	| 54.4303 	|
@@ -153,6 +153,10 @@ ID.alleles.tsv (10 files)
 
 A population map tab delimited file produced outside of STACKS created with sample name and population designation. This file was then applied with the files produced from *ustacks* to *cstacks* to produce catalogs of all loci, snps, and haplotypes for each designated population in files Population.catalog.tags.tsv, Population.catalog.snps.tsv, Population.catalog.alleles.tsv. *cstacks* produced no error in this run but due to the lack of a population file it grouped all the selected samples into a single population catalog. Due to this, analysis during *sstacks* assumes no differences between samples and does not create catalogs around each population. Moving forward this only allows for *sstacks* and *populations* to treat all samples as sourced from a single population. The catalogs were output to the directory **Hummingbird/Users/srlab/ustacks.**
 
+| **Process** 	|   **Sample**  	| **K-mers** 	|  **Loci** 	|
+|:-------:	|:---------:	|:------:	|:-----:	|
+| cstacks 	| catalog 1 	|  32481 	| 28771 	|
+
 **directory** Hummingbird ./srlab/ustacks
 
 **Loci catalog file**
@@ -168,6 +172,19 @@ batch_ 1.catalog.alleles.tsv
 ### sstacks output ###
 
 Finally these catalogs were then used to compare individual samples to the population catalogs using the *sstacks* function which produced a matches file sample.matches.tsv. *sstacks* produces matches.tsv files for each sample only compared to the single population file. These files were output to **Hummingbird/Users/srlab/ustacks**
+
+| **Process** 	| **Sample** 	| **Matches** 	| **Haplotypes** 	|
+|---------	|--------	|---------	|------------	|
+| sstacks 	| CACCTC 	| 7498    	| 8274       	|
+| sstacks 	| CCCTAA 	| 9721    	| 10873      	|
+| sstacks 	| GCTCAA 	| 10983   	| 12330      	|
+| sstacks 	| GTGTAA 	| 11200   	| 12608      	|
+| sstacks 	| ACATAC 	| 11884   	| 13346      	|
+| sstacks 	| ACCATG 	| 11123   	| 12517      	|
+| sstacks 	| ACCCCC 	| 10873   	| 12278      	|
+| sstacks 	| CAAAAA 	| 5135    	| 5575       	|
+| sstacks 	| TACACA 	| 821     	| 905        	|
+| sstacks 	| CAGGCA 	| 7367    	| 8170       	|
 
 **directory** Hummingbird ./srlab/ustacks
 
