@@ -8,33 +8,21 @@ Raw sequence data was returned in 14 gzipped fastq files. Copies of these files 
 
 **Work Files**
 
-lane1_ NoIndex_ L001_ R1_ 001.fastq
-
-lane1_ NoIndex_ L001_ R1_ 002.fastq
-
-lane1_ NoIndex_ L001_ R1_ 003.fastq
-
-lane1_ NoIndex_ L001_ R1_ 004.fastq
-
-lane1_ NoIndex_ L001_ R1_ 005.fastq
-
-lane1_ NoIndex_ L001_ R1_ 006.fastq
-
-lane1_ NoIndex_ L001_ R1_ 007.fastq
-
-lane1_ NoIndex_ L001_ R1_ 008.fastq
-
-lane1_ NoIndex_ L001_ R1_ 009.fastq
-
-lane1_ NoIndex_ L001_ R1_ 010.fastq
-
-lane1_ NoIndex_ L001_ R1_ 011.fastq
-
-lane1_ NoIndex_ L001_ R1_ 012.fastq
-
-lane1_ NoIndex_ L001_ R1_ 013.fastq
-
-lane1_ NoIndex_ L001_ R1_ 014.fastq
+| lane1_NoIndex_L001_R1_001.fastq 	|
+|---------------------------------	|
+| lane1_NoIndex_L001_R1_002.fastq 	|
+| lane1_NoIndex_L001_R1_003.fastq 	|
+| lane1_NoIndex_L001_R1_004.fastq 	|
+| lane1_NoIndex_L001_R1_005.fastq 	|
+| lane1_NoIndex_L001_R1_006.fastq 	|
+| lane1_NoIndex_L001_R1_007.fastq 	|
+| lane1_NoIndex_L001_R1_008.fastq 	|
+| lane1_NoIndex_L001_R1_009.fastq 	|
+| lane1_NoIndex_L001_R1_010.fastq 	|
+| lane1_NoIndex_L001_R1_011.fastq 	|
+| lane1_NoIndex_L001_R1_012.fastq 	|
+| lane1_NoIndex_L001_R1_013.fastq 	|
+| lane1_NoIndex_L001_R1_014.fastq 	|
 
 A tab delimited barcode file was also created to combine barcodes with the appropriate sample name in the  **Hummingbird/Users/srlab/Fish546-Jake/data** directory as a file called decradbarcodes1.txt. This barcode file and fastq files were then processed with STACKS using a sub function called *process_radtags* which demultiplexed the data while removing reads with ambiguous barcodes and radtags.
 
@@ -53,39 +41,40 @@ This program then output fastq files containing all the reads for each sample ba
 
 **processed fastq files**
 
-sample_ CCCTAA.fq     sample_ GGTTTG.fq
-sample_ AAACGG.fq     sample_ CCGAGG.fq     sample_ GTAAGT.fq
-sample_ AACGTT.fq     sample_ CCGCAT.fq     sample_ GTATCC.fq
-sample_ AACTGA.fq     sample_ CCTAAC.fq     sample_ GTCATC.fq
-sample_ AAGACG.fq     sample_ CGAGGC.fq     sample_ GTGCCT.fq
-sample_ AAGCTA.fq     sample_ CGCAGA.fq     sample_ GTGTAA.fq
-sample_ AATATC.fq     sample_ CGCGTG.fq     sample_ GTTGGA.fq
-sample_ AATGAG.fq     sample_ CGGTCC.fq     sample_ TAAGCT.fq
-sample_ ACAAGA.fq     sample_ CGTCTA.fq     sample_ TAATTC.fq
-sample_ ACAGCG.fq     sample_ CGTGAT.fq     sample_ TACACA.fq
-sample_ ACATAC.fq     sample_ CTACAG.fq     sample_ TACGGG.fq
-sample_ ACCATG.fq     sample_ CTCGCC.fq     sample_ TAGTAT.fq
-sample_ ACCCCC.fq     sample_ CTGCGA.fq     sample_ TATCAC.fq
-sample_ ACTCTT.fq     sample_ CTGGTT.fq     sample_ TCAAAG.fq
-sample_ ACTGGC.fq     sample_ CTTATG.fq     sample_ TCCTGC.fq
-sample_ AGCCAT.fq     sample_ CTTTGC.fq     sample_ TCGATT.fq
-sample_ AGCGCA.fq     sample_ GAAATG.fq     sample_ TCGCCA.fq
-sample_ AGGGTC.fq     sample_ GAACCA.fq     sample_ TCGGAC.fq
-sample_ AGGTGT.fq     sample_ GACGAC.fq     sample_ TCTCGG.fq
-sample_ AGTAGG.fq     sample_ GACTCT.fq     sample_ TCTTCT.fq
-sample_ AGTTAA.fq     sample_ GAGAGA.fq     sample_ TGAACC.fq
-sample_ ATAGTA.fq     sample_ GATCGT.fq     sample_ TGACAA.fq
-sample_ ATCAAA.fq     sample_ GCAGAT.fq     sample_ TGCCCG.fq
-sample_ ATGCAC.fq     sample_ GCATGG.fq     sample_ TGCTTA.fq
-sample_ ATGTTG.fq     sample_ GCCGTA.fq     sample_ TGGGGA.fq
-sample_ ATTCCG.fq     sample_ GCGACC.fq     sample_ TTATGA.fq
-sample_ CAAAAA.fq     sample_ GCGCTG.fq     sample_ TTCCGT.fq
-sample_ CAATCG.fq     sample_ GCTCAA.fq     sample_ TTCTAG.fq
-sample_ CACCTC.fq     sample_ GGACTT.fq     sample_ TTGAGC.fq
-sample_ CAGGCA.fq     sample_ GGCAAG.fq     sample_ TTTAAT.fq
-sample_ CATACT.fq     sample_ GGGCGC.fq     sample_ TTTGTC.fq
-sample_ CCATTT.fq     sample_ GGGGCG.fq
-sample_ CCCGGT.fq     sample_ GGTACA.fq
+| sample_CCCTAA.fq 	|   	| sample_GGTTTG.fq 	|   	|                  	|
+|:----------------:	|:-:	|:----------------:	|:-:	|:----------------:	|
+| sample_AAACGG.fq 	|   	| sample_CCGAGG.fq 	|   	| sample_GTAAGT.fq 	|
+| sample_AACGTT.fq 	|   	| sample_CCGCAT.fq 	|   	| sample_GTATCC.fq 	|
+| sample_AACTGA.fq 	|   	| sample_CCTAAC.fq 	|   	| sample_GTCATC.fq 	|
+| sample_AAGACG.fq 	|   	| sample_CGAGGC.fq 	|   	| sample_GTGCCT.fq 	|
+| sample_AAGCTA.fq 	|   	| sample_CGCAGA.fq 	|   	| sample_GTGTAA.fq 	|
+| sample_AATATC.fq 	|   	| sample_CGCGTG.fq 	|   	| sample_GTTGGA.fq 	|
+| sample_AATGAG.fq 	|   	| sample_CGGTCC.fq 	|   	| sample_TAAGCT.fq 	|
+| sample_ACAAGA.fq 	|   	| sample_CGTCTA.fq 	|   	| sample_TAATTC.fq 	|
+| sample_ACAGCG.fq 	|   	| sample_CGTGAT.fq 	|   	| sample_TACACA.fq 	|
+| sample_ACATAC.fq 	|   	| sample_CTACAG.fq 	|   	| sample_TACGGG.fq 	|
+| sample_ACCATG.fq 	|   	| sample_CTCGCC.fq 	|   	| sample_TAGTAT.fq 	|
+| sample_ACCCCC.fq 	|   	| sample_CTGCGA.fq 	|   	| sample_TATCAC.fq 	|
+| sample_ACTCTT.fq 	|   	| sample_CTGGTT.fq 	|   	| sample_TCAAAG.fq 	|
+| sample_ACTGGC.fq 	|   	| sample_CTTATG.fq 	|   	| sample_TCCTGC.fq 	|
+| sample_AGCCAT.fq 	|   	| sample_CTTTGC.fq 	|   	| sample_TCGATT.fq 	|
+| sample_AGCGCA.fq 	|   	| sample_GAAATG.fq 	|   	| sample_TCGCCA.fq 	|
+| sample_AGGGTC.fq 	|   	| sample_GAACCA.fq 	|   	| sample_TCGGAC.fq 	|
+| sample_AGGTGT.fq 	|   	| sample_GACGAC.fq 	|   	| sample_TCTCGG.fq 	|
+| sample_AGTAGG.fq 	|   	| sample_GACTCT.fq 	|   	| sample_TCTTCT.fq 	|
+| sample_AGTTAA.fq 	|   	| sample_GAGAGA.fq 	|   	| sample_TGAACC.fq 	|
+| sample_ATAGTA.fq 	|   	| sample_GATCGT.fq 	|   	| sample_TGACAA.fq 	|
+| sample_ATCAAA.fq 	|   	| sample_GCAGAT.fq 	|   	| sample_TGCCCG.fq 	|
+| sample_ATGCAC.fq 	|   	| sample_GCATGG.fq 	|   	| sample_TGCTTA.fq 	|
+| sample_ATGTTG.fq 	|   	| sample_GCCGTA.fq 	|   	| sample_TGGGGA.fq 	|
+| sample_ATTCCG.fq 	|   	| sample_GCGACC.fq 	|   	| sample_TTATGA.fq 	|
+| sample_CAAAAA.fq 	|   	| sample_GCGCTG.fq 	|   	| sample_TTCCGT.fq 	|
+| sample_CAATCG.fq 	|   	| sample_GCTCAA.fq 	|   	| sample_TTCTAG.fq 	|
+| sample_CACCTC.fq 	|   	| sample_GGACTT.fq 	|   	| sample_TTGAGC.fq 	|
+| sample_CAGGCA.fq 	|   	| sample_GGCAAG.fq 	|   	| sample_TTTAAT.fq 	|
+| sample_CATACT.fq 	|   	| sample_GGGCGC.fq 	|   	| sample_TTTGTC.fq 	|
+| sample_CCATTT.fq 	|   	| sample_GGGGCG.fq 	|   	|                  	|
+| sample_CCCGGT.fq 	|   	| sample_GGTACA.fq 	|   	|                  	|
 
 A log file produced by the program was then moved from the samples directory to the data directory for backup. While no errors are produced from this run, it only produces fastq files with barcodes instead of sample names.
 
@@ -100,25 +89,17 @@ Fastq files produced from *process_radtags* were checked for quality. The top 10
 
 **samples used**
 
-sample_ CACCTC
-
-sample_ CCCTAA
-
-sample_ GCTCAA
-
-sample_ GTGTAA
-
-sample_ ACATAC
-
-sample_ ACCATG
-
-sample_ ACCCCC
-
-sample_ CAAAAA
-
-sample_ TACACA
-
-sample_ CAGGCA
+| sample_CACCTC 	|
+|:-------------:	|
+| sample_CCCTAA 	|
+| sample_GCTCAA 	|
+| sample_GTGTAA 	|
+| sample_ACATAC 	|
+| sample_ACCATG 	|
+| sample_ACCCCC 	|
+| sample_CAAAAA 	|
+| sample_TACACA 	|
+| sample_CAGGCA 	|
 
 *in all subsequent references to these samples, they be referred to as ID instead of mentioning every individual file*
 ##
