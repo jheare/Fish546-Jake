@@ -9,8 +9,8 @@ Raw sequence data was returned in 14 gzipped fastq files. Copies of these files 
 
 **You can see a notebook of the *process_radtags* workflow [here](https://github.com/jheare/Fish546-Jake/blob/master/Course%20Project/Workflow/Process%20Radtags.ipynb).**
 ##
-### Denovo mapping ###
-Fastq files produced from *process_radtags* were checked for quality. The top 10 samples containing more than 180k reads were then selected to run through each step of the *denovo_map.pl* pipeline. 
+### Stacks processing ###
+Fastq files produced from *process_radtags* were checked for quality. The top 10 samples containing more than 180k reads were then selected to run through each step of the STACKS process. 
 
 |  Samples Used 	|
 |:-------------:	|
