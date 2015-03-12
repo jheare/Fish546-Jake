@@ -1,4 +1,4 @@
-#Workflow README#
+#Data Processing Workflow#
 ### Work Platform ###
 All analysis performed using:
 

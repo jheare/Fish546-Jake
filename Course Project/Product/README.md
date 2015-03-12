@@ -1,4 +1,4 @@
-# Product README #
+# RAD-Sequencing Information #
 The files provided here are for background information and process reproduction to use the program package Stacks to analyze raw RADSeq data. 
 
 You can learn about the project in the [BACKGROUND](https://github.com/jheare/Fish546-Jake/blob/master/Course%20Project/Product/BACKGROUND.md) file. 

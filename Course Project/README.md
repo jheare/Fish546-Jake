@@ -1,4 +1,4 @@
-# Course Project README #
+#Processing of Restriction-enzyme Assisted DNA Sequence Data for *O. lurida* #
 ---
 
 The goal of this project is to take raw RAD Sequencing information from *Ostrea lurida* samples and run it through Stacks so it can be analyzed for information about *O. lurida* population structure with Puget Sound Washington. 
