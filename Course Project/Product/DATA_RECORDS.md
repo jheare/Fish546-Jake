@@ -2,9 +2,9 @@
 ##Change to narrative. Describe columns in TSV files as they pertain to the data.##
 ----
 ### Raw Sequence Data ###
-Raw sequence data was returned in 14 gzipped fastq files. Copies of these files were placed on OWL for long term storage. Working versions were unzipped using gzip and then copied into a **Volumes/Data/Jake/lane1rad**.
+Raw sequence data was returned in 14 gzipped fastq files. Copies of these files were placed on OWL for long term storage. Working versions were unzipped using gzip and then copied into a **./lane1rad**.
 
-**directory** Data ./Jake/lane1rad
+**directory** ./lane1rad
 
 **Work Files**
 
@@ -25,9 +25,9 @@ Raw sequence data was returned in 14 gzipped fastq files. Copies of these files 
 | lane1_NoIndex_L001_R1_013.fastq 	|
 | lane1_NoIndex_L001_R1_014.fastq 	|
 
-A tab delimited barcode file was also created to combine barcodes with the appropriate sample name in the  **Hummingbird/Users/srlab/Fish546-Jake/data** directory as a file called decradbarcodes1.txt. This barcode file and fastq files were then processed with STACKS using a sub function called *process_radtags* which demultiplexed the data while removing reads with ambiguous barcodes and radtags.
+A tab delimited barcode file was also created to combine barcodes with the appropriate sample name in the  **./data** directory as a file called decradbarcodes1.txt. This barcode file and fastq files were then processed with STACKS using a sub function called *process_radtags* which demultiplexed the data while removing reads with ambiguous barcodes and radtags.
 
-**directory** repository ./Fish546-Jake/data
+**directory**  ./data
 
 **Barcode File**
 
@@ -36,9 +36,9 @@ decradbarcodes1.txt
 ##
 ### process_radtags output ###
 
-This program then output fastq files containing all the reads for each sample based on the barcode into **Hummingbird/Users/srlab/samples**. 
+This program then output fastq files containing all the reads for each sample based on the barcode into **./samples**. 
 
-**directory** Hummingbird ./srlab/samples
+**directory**  ./samples
 
 **processed fastq files**
 
@@ -80,14 +80,14 @@ This program then output fastq files containing all the reads for each sample ba
 
 A log file produced by the program was then moved from the samples directory to the data directory for backup. While no errors are produced from this run, it only produces fastq files with barcodes instead of sample names.
 
-**directory** repository ./Fish546-Jake/data
+**directory** ./data
 
 **process radtags log file**
 process_ radtags.log
 
 ### Samples for Stacks Process ###
 
-Fastq files produced from *process_radtags* were checked for quality. The top 10 samples containing more than 180k reads were then selected to run through Stacks process. Sample fastq files can be found in **Hummingbird/Users/srlab/samples**.
+Fastq files produced from *process_radtags* were checked for quality. The top 10 samples containing more than 180k reads were then selected to run through Stacks process. Sample fastq files can be found in **./samples**.
 
 **samples used**
 
@@ -107,7 +107,7 @@ Fastq files produced from *process_radtags* were checked for quality. The top 10
 *in all subsequent references to these samples, they be referred to as ID instead of mentioning every individual file*
 ##
 ### ustacks ###
-First the samples were run through the *ustacks* function which assembled the loci for each sample producing a sample.tags.tsv file, then called for SNPs producing a sample.snps.tsv file, and finally determined haplotypes and alleles creating a sample.alleles.tsv. No errors were produced for *ustacks* as it needs no input file to discern populations. Files were placed into the directory **Hummingbird/Users/srlab/ustacks**. This creates 30 files. 
+First the samples were run through the *ustacks* function which assembled the loci for each sample producing a sample.tags.tsv file, then called for SNPs producing a sample.snps.tsv file, and finally determined haplotypes and alleles creating a sample.alleles.tsv. No errors were produced for *ustacks* as it needs no input file to discern populations. Files were placed into the directory **./ustacks**. This creates 30 files. You can see the statistics for each sample and the number of reads and snps for each below.
 
 | **Sample** 	|  **Reads** 	| **Mean Coverage** 	|  **St Dev** 	|
 |:------:	|:------:	|:-------------:	|:-------:	|
@@ -122,40 +122,53 @@ First the samples were run through the *ustacks* function which assembled the lo
 | TACACA 	|  6152  	|    5.97252    	| 18.3384 	|
 | CAGGCA 	| 101739 	|    12.8119    	| 65.4695 	|
 
-**directory** Hummingbird ./srlab/ustacks
+**directory** ./ustacks
 
 **Assembled Loci file**
 ID.tags.tsv (10 files)
 
+This file contains information Loci and sequence information. Column 1 contains SQL ID, Column 2 contains the sample ID, Column 3 contains the Locus ID, Column 7 contains Sequence Type, Column 8 contains the Stack component, Column 9 contains the Sequence ID, Column 10 contains the Sequence, Column 11 equals the Deleveraged Flag, Column 12 contains the Blacklisted Flag, Column 13 contains the Lumberjackstack Flag, Column 14 contains the Log likelihood. 
+
 **SNP calls file**
 ID.snps.tsv (10 files)
 
+This file contains SNP information. Column 1 contains SQL ID, Column 2 contains the sample ID, Column 3 contains the Locus ID, Column 4 contains column info, Column 5 contains the type, Column 6 contains the Likelihood ratio, Columns 7-10 contain Ranks 1-4 (Majority Nucleotide, Alternative Nucleotide, Third alternative nucleotide, fourth alternative nucleotide).
+
 **Haplotypes/Alleles file**
 ID.alleles.tsv (10 files)
+
+This file contains haplotype information. Column 1 contains SQL ID, Column 2 contains the sample ID, Column 3 contains the Locus ID, Column 4 contains the haplotype, column 5 has the percent of reads for the haplotype, and column 6 contains the number of reads with the haplotype. 
+
 ##
 ### cstacks output ###
 
-A population map tab delimited file produced outside of STACKS created with sample name and population designation. This file was then applied with the files produced from *ustacks* to *cstacks* to produce catalogs of all loci, snps, and haplotypes for each designated population in files Population.catalog.tags.tsv, Population.catalog.snps.tsv, Population.catalog.alleles.tsv. *cstacks* produced no error in this run but due to the lack of a population file it grouped all the selected samples into a single population catalog. Due to this, analysis during *sstacks* assumes no differences between samples and does not create catalogs around each population. Moving forward this only allows for *sstacks* and *populations* to treat all samples as sourced from a single population. The catalogs were output to the directory **Hummingbird/Users/srlab/ustacks.**
+A population map tab delimited file produced outside of STACKS created with sample name and population designation. This file was then applied with the files produced from *ustacks* to *cstacks* to produce catalogs of all loci, snps, and haplotypes for each designated population in files Population.catalog.tags.tsv, Population.catalog.snps.tsv, Population.catalog.alleles.tsv. *cstacks* produced no error in this run but due to the lack of a population file it grouped all the selected samples into a single population catalog. Due to this, analysis during *sstacks* assumes no differences between samples and does not create catalogs around each population. Moving forward this only allows for *sstacks* and *populations* to treat all samples as sourced from a single population. The catalogs were output to the directory **./ustacks.** Below is the basic information about the catalog produced. 
 
 |   Sample  	| K-mers 	|  Loci 	|
 |:---------:	|:------:	|:-----:	|
 | catalog 1 	|  32481 	| 28771 	|
 
-**directory** Hummingbird ./srlab/ustacks
+**directory** ./ustacks
 
 **Loci catalog file**
 batch_ 1.catalog.tags.tsv
 
+This file contains all the same info as the individual Loci TSVs but is an amalgamation of all samples used for the catalog. 
+
 **SNP catalog file**
 batch_ 1.catalog.snps.tsv
+
+This file contains all the same info as the individual snps TSVS but is an amalgamation of all samples used for the catalog. 
 
 **Allele catalog file**
 batch_ 1.catalog.alleles.tsv
 
+This file contains all the same info as the individual alleles TSVS but is an amalgamation of all samples used for the catalog. 
+
 ##
 ### sstacks output ###
 
-Finally these catalogs were then used to compare individual samples to the population catalogs using the *sstacks* function which produced a matches file sample.matches.tsv. *sstacks* produces matches.tsv files for each sample only compared to the single population file. These files were output to **Hummingbird/Users/srlab/ustacks**
+Finally these catalogs were then used to compare individual samples to the population catalogs using the *sstacks* function which produced a matches file sample.matches.tsv. *sstacks* produces matches.tsv files for each sample only compared to the single population file. These files were output to **./ustacks** Below you can see the information for the number of matches and haplotypes for each sample and the catalog. 
 
 | Sample 	| Matches 	| Haplotypes 	|
 |:------:	|:-------:	|:----------:	|
@@ -170,8 +183,10 @@ Finally these catalogs were then used to compare individual samples to the popul
 | TACACA 	|   821   	|     905    	|
 | CAGGCA 	|   7367  	|    8170    	|
 
-**directory** Hummingbird ./srlab/ustacks
+**directory**  ./ustacks
 
 **Matches file**
 ID.matches.tsv (10 files)
 
+This file contains information about the matches between the catalog and the individual files. 
+Column 1 contains the SQL ID, Column 2 contains the Batch ID, Column 3 contains the Catalog ID, Column 4 contains the sample id, Column 5 contains the Locus ID, Column 6 contains the haplotype match, column 7 is the Stack Depth (number of reads contained in the locus that match the catalog), Column 8 is the log likelihood. 
